@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public CharacterController controller;
-    private float turnSmoothTime = 0.1f;
+    private float turnSmoothTime = 0.001f;
     private float turnSmoothVelocity;
     [SerializeField]
     private float speed = 6f;
