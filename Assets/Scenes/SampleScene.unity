@@ -260,6 +260,7 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   sensitivity: 0
+  TurningSen: 3
 --- !u!114 &120993025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +335,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298572420}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &298572422
 Camera:
   m_ObjectHideFlags: 0
@@ -390,7 +391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 63.637005, y: -160.16101, z: 0}
 --- !u!1 &450646246 stripped
 GameObject:
@@ -411,7 +412,7 @@ CapsuleCollider:
   m_Radius: 4
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 4, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &450646248
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -423,11 +424,29 @@ Rigidbody:
   m_Mass: 12
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
+  m_UseGravity: 1
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 90
   m_CollisionDetection: 0
+--- !u!143 &450646249
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450646246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &472195991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -656,7 +675,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &710816680
 PrefabInstance:
@@ -675,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b031d1c8e287114d82bbe6f7debe848, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.55
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3b031d1c8e287114d82bbe6f7debe848, type: 3}
       propertyPath: m_LocalPosition.z
@@ -808,7 +827,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 39.569, y: -195.26999, z: 6.406}
 --- !u!1001 &1122643441
 PrefabInstance:
@@ -893,11 +912,11 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211506368}
   serializedVersion: 2
-  m_Mass: 12
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 90
   m_CollisionDetection: 0
@@ -1681,7 +1700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400554, guid: 60badb462fe6ecf44b06ec9fabe2cb54, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400554, guid: 60badb462fe6ecf44b06ec9fabe2cb54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
