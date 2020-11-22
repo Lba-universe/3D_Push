@@ -37,10 +37,12 @@ public class Move : MonoBehaviour
             //Jumping
             if (Input.GetButton("Jump"))
                 moveDirection.y = jumpSpeed;
+           
 
         }
         turner = Input.GetAxis("Mouse X") * sensitivity;
         looker = -Input.GetAxis("Mouse Y") * sensitivity;
+        
         if (turner != 0)
         {
             //Code for action on mouse moving right
@@ -50,6 +52,15 @@ public class Move : MonoBehaviour
         {
             //Code for action on mouse moving right
             transform.eulerAngles += new Vector3(looker, 0, 0);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("x "+Input.mousePosition.x);
+            Debug.Log("y "+Input.mousePosition.y);
+            Debug.Log("z "+Input.mousePosition.z);
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.eulerAngles += worldPosition;
+
         }
         yRotation = -Mathf.Clamp(Input.GetAxis("Mouse Y") * mouseSpeedY, -80f, 80f);
         xRotation = Input.GetAxis("Mouse X") * mouseSpeedX;
