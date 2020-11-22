@@ -100,3 +100,6 @@ IGDPD*.ppt
 # PyCharm
 .idea
 
+ProjectSettings/InputManager.asset
+Assets/Scripts/Movers/Movement.cs.meta
+Assets/Scripts/Movers/Movement.cs

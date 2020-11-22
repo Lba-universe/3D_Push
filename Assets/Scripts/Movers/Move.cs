@@ -11,10 +11,9 @@ public class Move : MonoBehaviour
     private float turner;
     private float looker;
     public float sensitivity;
-    float mouseSpeedX = 1;
-    float mouseSpeedY = 1;
     float xRotation = 0;
-    float yRotation = 0;
+    [SerializeField]
+    float TurningSen = 3;
     CharacterController controller;
     // Use this for initialization
     void Start()
@@ -30,7 +29,7 @@ public class Move : MonoBehaviour
         if (controller.isGrounded)
         {
             //Feed moveDirection with input.
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+            moveDirection = new Vector3(0f, 0f, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             //Multiply it by speed.
             moveDirection *= speed;
@@ -53,24 +52,18 @@ public class Move : MonoBehaviour
             //Code for action on mouse moving right
             transform.eulerAngles += new Vector3(looker, 0, 0);
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("x "+Input.mousePosition.x);
-            Debug.Log("y "+Input.mousePosition.y);
-            Debug.Log("z "+Input.mousePosition.z);
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.eulerAngles += worldPosition;
-
-        }
-        yRotation = -Mathf.Clamp(Input.GetAxis("Mouse Y") * mouseSpeedY, -80f, 80f);
-        xRotation = Input.GetAxis("Mouse X") * mouseSpeedX;
+       
+       
+        xRotation = Input.GetAxis("Horizontal") * TurningSen;
 
         //Apply to camera and player
         //Camera.main.transform.eulerAngles += new Vector3(yRotation, 0f, 0f);
         transform.eulerAngles += new Vector3(0f, xRotation, 0f);
+
         //Applying gravity to the controller
         moveDirection.y -= gravity * Time.deltaTime;
         //Making the character move
         controller.Move(moveDirection * Time.deltaTime);
+       
     }
 }
