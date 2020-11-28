@@ -24,7 +24,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         // is the controller on the ground?
         if (controller.isGrounded)
         {
@@ -36,12 +36,12 @@ public class Move : MonoBehaviour
             //Jumping
             if (Input.GetButton("Jump"))
                 moveDirection.y = jumpSpeed;
-           
+
 
         }
         turner = Input.GetAxis("Mouse X") * sensitivity;
         looker = -Input.GetAxis("Mouse Y") * sensitivity;
-        
+
         if (turner != 0)
         {
             //Code for action on mouse moving right
@@ -52,8 +52,8 @@ public class Move : MonoBehaviour
             //Code for action on mouse moving right
             transform.eulerAngles += new Vector3(looker, 0, 0);
         }
-       
-       
+
+
         xRotation = Input.GetAxis("Horizontal") * TurningSen;
 
         //Apply to camera and player
@@ -64,6 +64,6 @@ public class Move : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         //Making the character move
         controller.Move(moveDirection * Time.deltaTime);
-       
+
     }
 }

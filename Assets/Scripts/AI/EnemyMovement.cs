@@ -21,11 +21,14 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = enemy.position - transform.position;
-        float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-        rb.rotation = Quaternion.Euler(0f, angle, 0f);
-        direction.Normalize();
-        movement = direction;
+        if (rb.gameObject.scene.IsValid())
+        {
+            Vector3 direction = enemy.position - transform.position;
+            float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            rb.rotation = Quaternion.Euler(0f, angle, 0f);
+            direction.Normalize();
+            movement = direction;
+        }
     }
 
     private void FixedUpdate()

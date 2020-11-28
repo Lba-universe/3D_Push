@@ -13,7 +13,7 @@ public class DestroyOnTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == triggeringTag && enabled)
+        if ((other.tag == triggeringTag || other.tag=="RedDragon") && enabled)
         {
 
             Destroy(other.gameObject);
