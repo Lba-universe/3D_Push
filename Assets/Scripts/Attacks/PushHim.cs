@@ -17,8 +17,8 @@ public class PushHim : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.transform);
-        Debug.Log(other.gameObject);
+       // Debug.Log(other.transform);
+        //Debug.Log(other.gameObject);
     }
 
 
