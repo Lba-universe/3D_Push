@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gos: []
-  power: 500
+  power: 2
 --- !u!114 &120993024
 MonoBehaviour:
   m_ObjectHideFlags: 0
