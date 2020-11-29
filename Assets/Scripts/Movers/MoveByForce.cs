@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 
 /**
  *  This component allows the player to add force to its object using the arrow keys.
