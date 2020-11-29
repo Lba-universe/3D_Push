@@ -18,7 +18,6 @@ public class MoveByForce : MonoBehaviour
     [Range(0, 1f)]
     [SerializeField] float slowDownAtJump = 0.5f;
 
-    private float xRotation = 0;
     private Rigidbody rb;
     private TouchDetector td;
     public float turnSmoothTime = 0.001f;
