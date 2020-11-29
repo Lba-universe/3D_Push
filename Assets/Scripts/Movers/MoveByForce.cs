@@ -18,17 +18,22 @@ public class MoveByForce : MonoBehaviour
     [Range(0, 1f)]
     [SerializeField] float slowDownAtJump = 0.5f;
 
+    private float xRotation = 0;
     private Rigidbody rb;
     private TouchDetector td;
+    public float turnSmoothTime = 0.001f;
+    private float turnSmoothVelocity;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         td = GetComponent<TouchDetector>();
+   
     }
 
     private ForceMode walkForceMode = ForceMode.Force; 
     private ForceMode jumpForceMode = ForceMode.Impulse;
     private bool playerWantsToJump = false;
+
 
     private void Update()
     {
@@ -44,15 +49,26 @@ public class MoveByForce : MonoBehaviour
     {
         if (td.IsTouching())
         {  // allow to walk and jump 
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
+           //float horizontal = Input.GetAxis("Horizontal");
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+            Vector3 direction = new Vector3(-horizontal, 0f, -vertical).normalized;
+
+            if (direction.magnitude >= 0.1f)
+            {
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
 
-            rb.AddForce(new Vector3(-horizontal * walkForce, 0, -vertical * walkForce), walkForceMode);
+                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                rb.AddForce(moveDir.normalized * walkForce , walkForceMode);
 
+            }
 
             if (playerWantsToJump)
             {            // Since it is active only once per frame, and FixedUpdate may not run in that frame!
+
                 rb.velocity = new Vector3(rb.velocity.x * slowDownAtJump, rb.velocity.y, rb.velocity.z);
                 rb.AddForce(new Vector3(0, jumpImpulse, 0), jumpForceMode);
                 playerWantsToJump = false;
