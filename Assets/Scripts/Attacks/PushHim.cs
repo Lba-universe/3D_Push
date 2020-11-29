@@ -5,7 +5,7 @@ using UnityEngine;
 public class PushHim : MonoBehaviour
 {
     public GameObject[] gos;
-    public float power = 500f;
+    public float power = 11f;
     // Start is called before the first frame update
     void Update()
     {
@@ -17,8 +17,8 @@ public class PushHim : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.transform);
-        Debug.Log(other.gameObject);
+       // Debug.Log(other.transform);
+        //Debug.Log(other.gameObject);
     }
 
 
@@ -46,7 +46,8 @@ public class PushHim : MonoBehaviour
         if (distance < 0.9)
         {
             Debug.Log(distance);
-            closest.GetComponent<Rigidbody>().AddForce(dir * power);
+            closest.GetComponent<Rigidbody>().AddForce(dir * power,ForceMode.Impulse);
+            
         }
      
 
