@@ -10,11 +10,16 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMovement))]
 public class ClosestEnemy : MonoBehaviour
 {
-    public Transform Player;
+    private Transform Player;
 
     public List<Transform> EnemyList;
 
     private Transform nearestEnemy;
+
+    void Start()
+    {
+        Player = gameObject.GetComponent<Transform>();
+    }
 
     void Update()
     {
@@ -44,8 +49,6 @@ public class ClosestEnemy : MonoBehaviour
     }
     IEnumerator waiter()
     {
-
-
         //Wait for 4 seconds
         yield return new WaitForSeconds(2);
 

@@ -9,10 +9,16 @@ public class PushHim : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             DoPush();
         }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log(other.transform);
+        Debug.Log(other.gameObject);
     }
 
 
