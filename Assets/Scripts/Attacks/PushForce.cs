@@ -8,11 +8,10 @@ public class PushForce : MonoBehaviour
     private Vector3 velocty;
     private Rigidbody rb;
     private Transform tf;
-    private bool isPressed = false;
-
-    private bool AttackIsReady = true;
     [SerializeField]
     private ForceMode forcemode;
+    [SerializeField]
+    private float ForceLevel = 15;
 
 
     // Start is called before the first frame update
@@ -24,14 +23,6 @@ public class PushForce : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            isPressed = true;
-        }
-    }
-
 
     void OnCollisionEnter(Collision other)
     {
@@ -39,30 +30,8 @@ public class PushForce : MonoBehaviour
         if (enabled && other.gameObject.tag == "Player")
         {
 
-            Debug.Log("collid");
-
-            velocty = rb.velocity;
-            float xDir = tf.transform.eulerAngles.x;
-            float zDir = tf.transform.eulerAngles.z;
-
-            if (isPressed && AttackIsReady)
-            {
-                other.rigidbody.AddExplosionForce(1000 ,new Vector3(xDir * velocty.x, 0, zDir * velocty.z), 50, 8, forcemode);
-                AttackIsReady = false;
-                StartCoroutine("wait");
-            }
-            else
-            {
-                other.rigidbody.AddForce(new Vector3(xDir * velocty.x, 0, zDir * velocty.z), forcemode);
-            }
-            isPressed = false;
+            other.rigidbody.AddForce(transform.forward* ForceLevel, forcemode);
         }
-    }
-
-    public IEnumerator wait()
-    {
-        yield return new WaitForSeconds(5);
-        AttackIsReady = true;
     }
 
 }

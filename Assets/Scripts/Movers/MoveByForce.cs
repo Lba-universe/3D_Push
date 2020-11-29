@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+
 
 /**
  *  This component allows the player to add force to its object using the arrow keys.
@@ -40,13 +39,7 @@ public class MoveByForce : MonoBehaviour
         // Keyboard events are tested each frame, so we should check them here.
         if (Input.GetKeyDown(KeyCode.Space))
             playerWantsToJump = true;
-    }
 
-    /*
-     * Note that updates related to the physics engine should be done in FixedUpdate and not in Update!
-     */
-    private void FixedUpdate()
-    {
         if (td.IsTouching())
         {  // allow to walk and jump 
            //float horizontal = Input.GetAxis("Horizontal");
@@ -62,11 +55,15 @@ public class MoveByForce : MonoBehaviour
 
 
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-                rb.AddForce(moveDir.normalized * walkForce , walkForceMode);
+                rb.AddForce(moveDir.normalized * walkForce, walkForceMode);
 
             }
+            if (direction.magnitude == 0)
+            {
+                rb.velocity = new Vector3(rb.velocity.x * slowDownAtJump, rb.velocity.y, rb.velocity.z); 
+            }
 
-            if (playerWantsToJump)
+                if (playerWantsToJump)
             {            // Since it is active only once per frame, and FixedUpdate may not run in that frame!
 
                 rb.velocity = new Vector3(rb.velocity.x * slowDownAtJump, rb.velocity.y, rb.velocity.z);
