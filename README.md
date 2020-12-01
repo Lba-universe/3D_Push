@@ -4,7 +4,7 @@
 
 **level 2**
 
-in this level we add fire ball thah fly away the players if you touch them.
+in this level we add fire ball when a player touch it he fly away.
 
 **using script:**
 
