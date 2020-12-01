@@ -11,7 +11,7 @@ public class PushForce : MonoBehaviour
     [SerializeField]
     private ForceMode forcemode;
     [SerializeField]
-    private float ForceLevel = 15;
+    private float ForceLevel = 5;
 
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class PushForce : MonoBehaviour
 
         if (enabled && other.gameObject.tag == "Player")
         {
-
+            Debug.Log("pushed");
             other.rigidbody.AddForce(transform.forward* ForceLevel, forcemode);
         }
     }

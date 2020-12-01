@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GreenDra
   - RedDragon
+  - Enemy
   layers:
   - Default
   - TransparentFX

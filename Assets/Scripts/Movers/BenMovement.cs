@@ -24,6 +24,9 @@ public class BenMovement : MonoBehaviour
     [Range(0, 1f)]
     [SerializeField] float slowDownAtJump = 0.5f;
 
+    [Range(0, 1f)]
+    [SerializeField] float dashDrag = 0.5f;
+
 
     private Rigidbody rbody;
 
@@ -67,7 +70,7 @@ public class BenMovement : MonoBehaviour
 
         if (playerWantsToDash)
         {
-            Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(1 / rbody.drag, 0, 1 / rbody.drag));
+              Vector3 dashVelocity = Vector3.Scale(transform.forward, DashDistance * new Vector3(dashDrag, 0, dashDrag));
             rbody.AddForce(dashVelocity, ForceMode.Impulse);
             playerWantsToDash = false;
 
