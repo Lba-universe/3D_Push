@@ -13,10 +13,10 @@ public class TouchDetector : MonoBehaviour
     [Header("This field is for display only")]
     [SerializeField] private int touchingColliders = 0;
 
-    private Rigidbody rb;
+    private Rigidbody rbody;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rbody = GetComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision collision)

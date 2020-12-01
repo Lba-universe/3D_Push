@@ -28,7 +28,7 @@ public class ClosestEnemy : MonoBehaviour
         nearestEnemy = null;
         foreach (Transform enemy in EnemyList)
         {
-            if (enemy.gameObject.scene.IsValid())
+            if (enemy != null)
             {
                 float distance = Vector3.Distance(Player.position, enemy.position);
                 if (distance < minimumDistance)
@@ -37,19 +37,16 @@ public class ClosestEnemy : MonoBehaviour
                     nearestEnemy = enemy;
                 }
             }
-            else
-            {
+            else 
                 EnemyList.Remove(enemy);
-                nearestEnemy = null;
-            }
+            
         }
-       // StartCoroutine(waiter());
+        StartCoroutine(waiter());
         gameObject.GetComponent<EnemyMovement>().enemy = nearestEnemy;
-       // Debug.Log("Nearest Enemy: " + nearestEnemy + "; Distance: " + minimumDistance);
     }
     IEnumerator waiter()
     {
-        //Wait for 4 seconds
+        //Wait for 2 seconds
         yield return new WaitForSeconds(2);
 
     }
