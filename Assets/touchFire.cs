@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class touchFire : MonoBehaviour
+public class TouchFire : MonoBehaviour
 {
     public float power = 2232f;
     // Start is called before the first frame update

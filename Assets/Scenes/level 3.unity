@@ -2400,7 +2400,7 @@ GameObject:
   - component: {fileID: 279912185}
   m_Layer: 0
   m_Name: GreenDragons
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2778,7 +2778,7 @@ PrefabInstance:
     - target: {fileID: 5675583815840534008, guid: c290a7629af05f74591474d52cf21f15,
         type: 3}
       propertyPath: m_Drag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5675583815840534008, guid: c290a7629af05f74591474d52cf21f15,
         type: 3}
@@ -4731,7 +4731,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5313249, y: 2.5313246, z: 0.8}
+  m_Size: {x: 2.5313249, y: 2.5313246, z: 0.87}
   m_Center: {x: -0.000000059604645, y: 0, z: 0.13731048}
 --- !u!54 &538968668
 Rigidbody:
@@ -9008,6 +9008,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1155770806}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1159065661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7434631539660618037, guid: 881af46cdc7d2ee4fa67a44f14ee1d53,
+    type: 3}
+  m_PrefabInstance: {fileID: 7434631538829940984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159065662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159065661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b3f5b221a280c45bce367cefb73d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forcemode: 1
+  ForceLevel: 10
 --- !u!1 &1159476220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000010977249682, guid: 09cd6fa57baf40045bb06c15669e4c60,
@@ -14392,7 +14412,7 @@ GameObject:
   - component: {fileID: 1760549651}
   m_Layer: 0
   m_Name: BlueDragons
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16277,7 +16297,7 @@ PrefabInstance:
     - target: {fileID: 6844678137266912977, guid: bf776cf29d0f7d042b83cb307c1de5c4,
         type: 3}
       propertyPath: m_Drag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6844678137266912979, guid: bf776cf29d0f7d042b83cb307c1de5c4,
         type: 3}
@@ -16327,7 +16347,7 @@ PrefabInstance:
     - target: {fileID: 6844678137266912983, guid: bf776cf29d0f7d042b83cb307c1de5c4,
         type: 3}
       propertyPath: ForceLevel
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6844678137266912983, guid: bf776cf29d0f7d042b83cb307c1de5c4,
         type: 3}
@@ -17705,7 +17725,7 @@ PrefabInstance:
     - target: {fileID: 5675583815840534008, guid: c290a7629af05f74591474d52cf21f15,
         type: 3}
       propertyPath: m_Drag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5675583815840534008, guid: c290a7629af05f74591474d52cf21f15,
         type: 3}
@@ -17830,7 +17850,7 @@ PrefabInstance:
     - target: {fileID: 6844678137266912977, guid: bf776cf29d0f7d042b83cb307c1de5c4,
         type: 3}
       propertyPath: m_Drag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6844678137266912979, guid: bf776cf29d0f7d042b83cb307c1de5c4,
         type: 3}
@@ -17880,7 +17900,7 @@ PrefabInstance:
     - target: {fileID: 6844678137266912983, guid: bf776cf29d0f7d042b83cb307c1de5c4,
         type: 3}
       propertyPath: ForceLevel
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6844678137266912983, guid: bf776cf29d0f7d042b83cb307c1de5c4,
         type: 3}
@@ -17956,6 +17976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: DashDistance
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434631539660618024, guid: 881af46cdc7d2ee4fa67a44f14ee1d53,
+        type: 3}
+      propertyPath: Speed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7434631539660618028, guid: 881af46cdc7d2ee4fa67a44f14ee1d53,
         type: 3}

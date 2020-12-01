@@ -8,6 +8,7 @@ using UnityEngine;
  * using enemy counter to know if player won the lvl or we should reload same one
  */
 
+[RequireComponent(typeof(EnemyCounter))]
 
 public class DestroyOnTrigger : MonoBehaviour {
 
@@ -17,38 +18,56 @@ public class DestroyOnTrigger : MonoBehaviour {
     [SerializeField] string triggeringTag;
 
 
+    public void Awake()
+    {
+        nextLevel();
+
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
 
         if (other.tag == triggeringTag && enabled)
         {
-
+           
             Destroy(other.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else {
             Destroy(other.gameObject);
             EnemyCounter.EnemyDie();
+            nextLevel();
+
+        }
+
+    }
+
+    private void nextLevel() {
+
             if (EnemyCounter.getCount() == 0)
             {
+
+                Debug.Log("enemy died");
+
                 //reset count
                 EnemyCounter.setCount(0);
 
-
-                Debug.Log(SceneManager.GetActiveScene().buildIndex);
-                if (SceneManager.GetActiveScene().buildIndex < 2)
+                if (SceneManager.GetActiveScene().buildIndex < 4)
                 {
+                    Debug.Log("new scene");
+
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
                 else
                 {
+                    Debug.Log("win");
                     // player won
                     Time.timeScale = 0;
                     winnerText.text = "You win \n Great Job!";
                 }
             }
-        }
 
-    }
+        }
 
 }
