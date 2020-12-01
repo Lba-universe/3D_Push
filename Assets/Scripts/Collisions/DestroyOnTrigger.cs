@@ -8,7 +8,6 @@ using UnityEngine;
  * using enemy counter to know if player won the lvl or we should reload same one
  */
 
-[RequireComponent(typeof(EnemyCounter))]
 
 public class DestroyOnTrigger : MonoBehaviour {
 
@@ -18,11 +17,7 @@ public class DestroyOnTrigger : MonoBehaviour {
     [SerializeField] string triggeringTag;
 
 
-    public void Awake()
-    {
-        nextLevel();
-
-    }
+    
 
 
     private void OnTriggerEnter(Collider other)
@@ -30,15 +25,18 @@ public class DestroyOnTrigger : MonoBehaviour {
 
         if (other.tag == triggeringTag && enabled)
         {
-           
+
+            EnemyCounter.setCount(0);
             Destroy(other.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else {
-            Destroy(other.gameObject);
+         
+            
             EnemyCounter.EnemyDie();
-            nextLevel();
 
+            nextLevel();
+            Destroy(other.gameObject);
         }
 
     }
@@ -50,10 +48,10 @@ public class DestroyOnTrigger : MonoBehaviour {
 
                 Debug.Log("enemy died");
 
-                //reset count
+
                 EnemyCounter.setCount(0);
 
-                if (SceneManager.GetActiveScene().buildIndex < 4)
+            if (SceneManager.GetActiveScene().buildIndex < 4)
                 {
                     Debug.Log("new scene");
 

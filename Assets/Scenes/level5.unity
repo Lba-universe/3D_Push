@@ -135,7 +135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100554, guid: d29f348d5cfc3ce48943273b8891bf68, type: 3}
       propertyPath: m_TagString
-      value: RedDragon
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400550, guid: d29f348d5cfc3ce48943273b8891bf68, type: 3}
       propertyPath: m_LocalScale.x
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21f72db759284141be0e4aa229ca0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 10
+  power: 7
 --- !u!64 &147993267
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 200, y: 20, z: 200}
+  m_Size: {x: 1000, y: 20, z: 1000}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!114 &284663428
 MonoBehaviour:
@@ -711,6 +711,16 @@ PrefabInstance:
       propertyPath: m_FocalLength
       value: 16.21707
       objectReference: {fileID: 0}
+    - target: {fileID: 5488169581341633080, guid: 5b6e687792db1f14cbe2e7523e784735,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488169581341633080, guid: 5b6e687792db1f14cbe2e7523e784735,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5530531933501583264, guid: 5b6e687792db1f14cbe2e7523e784735,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -945,6 +955,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.892
+      objectReference: {fileID: 0}
+    - target: {fileID: 5534829379073542658, guid: 5b6e687792db1f14cbe2e7523e784735,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5534829379073542658, guid: 5b6e687792db1f14cbe2e7523e784735,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.59
       objectReference: {fileID: 0}
     - target: {fileID: 5535262662811512767, guid: 5b6e687792db1f14cbe2e7523e784735,
         type: 3}
@@ -1616,7 +1636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21f72db759284141be0e4aa229ca0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 10
+  power: 7
 --- !u!65 &768979949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2081,13 +2101,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.124485, y: -0.8096379, z: -0.5644724, w: 0.101788364}
-  m_LocalPosition: {x: 1.0436, y: -3.2732, z: 8.128}
+  m_LocalRotation: {x: -0.093429886, y: 0.87105966, z: 0.4784055, w: -0.06044955}
+  m_LocalPosition: {x: 0.903, y: -3.533, z: 14.47}
   m_LocalScale: {x: 0.020010041, y: 0.080021605, z: 0.022208188}
   m_Children: []
   m_Father: {fileID: 1198404541}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 20, y: 148.96301, z: 1.4810001}
+  m_LocalEulerAnglesHint: {x: -55.3, y: 200, z: -22.8}
 --- !u!4 &971309434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4075937848129010, guid: 29636f40562819649b730c52f1babbcb,
@@ -2911,7 +2931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0045408e6dbfb5049a6a93184e81164f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkForce: 10
+  walkForce: 18
   jumpImpulse: 10
   slowDownAtJump: 0.5
   turnSmoothTime: 0.001

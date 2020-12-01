@@ -8,7 +8,7 @@ using UnityEngine;
  */
 public class EnemyCounter : MonoBehaviour
 {
-
+    static object Lock = new object();
     private static int count = 0;
     public void Awake()
     {
@@ -17,7 +17,12 @@ public class EnemyCounter : MonoBehaviour
 
     public static void EnemyDie()
     {
-        count--;
+        lock (Lock)
+        {
+            count--;
+            Debug.Log(EnemyCounter.getCount());
+
+        }
     }
 
     public static int getCount() {
@@ -26,7 +31,11 @@ public class EnemyCounter : MonoBehaviour
 
     public static void setCount(int newCount)
     {
-        count = newCount;
+
+        lock (Lock)
+        {
+            count = newCount;
+        }
     }
 
 
