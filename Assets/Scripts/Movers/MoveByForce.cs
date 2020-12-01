@@ -60,7 +60,7 @@ public class MoveByForce : MonoBehaviour
             }
             if (direction.magnitude == 0)
             {
-                rb.velocity = new Vector3(rb.velocity.x * slowDownAtJump, rb.velocity.y, rb.velocity.z); 
+                rb.velocity = new Vector3(rb.velocity.x * 0.99f, rb.velocity.y * 0.99f, rb.velocity.z * 0.99f); 
             }
 
                 if (playerWantsToJump)

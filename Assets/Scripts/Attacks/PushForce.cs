@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-/**
- * This component push other object in collision
- */
 public class PushForce : MonoBehaviour
 {
 
@@ -15,7 +11,7 @@ public class PushForce : MonoBehaviour
     [SerializeField]
     private ForceMode forcemode;
     [SerializeField]
-    private float ForceLevel = 5;
+    private float ForceLevel = 15;
 
 
     // Start is called before the first frame update
@@ -31,9 +27,9 @@ public class PushForce : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
 
-        if (enabled && other.gameObject.tag == "Player")
+        if (enabled && (other.gameObject.tag == "Player" || other.gameObject.tag == "RedDragon" || other.gameObject.tag == "Enemy"))
         {
-            Debug.Log("pushed");
+
             other.rigidbody.AddForce(transform.forward* ForceLevel, forcemode);
         }
     }
