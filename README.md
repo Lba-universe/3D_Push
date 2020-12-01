@@ -1,5 +1,7 @@
 # Our Game
 
+---
+
 **level 2**
 
 in this level we add fire ball thah fly away the players if you touch them.
@@ -13,3 +15,5 @@ PushHim.cs  [code here](https://github.com/Lba-universe/3D_Push/blob/master/Asse
 TouchDetector.cs  [code here](https://github.com/Lba-universe/3D_Push/blob/master/Assets/Scripts/Collisions/TouchDetector.cs)
 
 ***picture:***
+
+---
