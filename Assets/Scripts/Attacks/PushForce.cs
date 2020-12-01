@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/**
+ * This component push other object in collision
+ */
 public class PushForce : MonoBehaviour
 {
 

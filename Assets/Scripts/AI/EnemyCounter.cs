@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/**
+ * This component attached to each enemy and count them
+ */
 public class EnemyCounter : MonoBehaviour
 {
 

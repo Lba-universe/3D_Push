@@ -5,9 +5,8 @@ using UnityEngine;
 
 /**
  * This component destroys its object whenever it triggers with the given tag.
+ * using enemy counter to know if player won the lvl or we should reload same one
  */
-
-
 
 
 public class DestroyOnTrigger : MonoBehaviour {
@@ -35,14 +34,18 @@ public class DestroyOnTrigger : MonoBehaviour {
                 //reset count
                 EnemyCounter.setCount(0);
 
-                if (SceneManager.GetActiveScene().buildIndex < 1)
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-                else { 
-                // player won
+                Debug.Log(SceneManager.GetActiveScene().buildIndex);
+                if (SceneManager.GetActiveScene().buildIndex < 2)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+                else
+                {
+                    // player won
                     Time.timeScale = 0;
                     winnerText.text = "You win \n Great Job!";
-                  }
+                }
             }
         }
 

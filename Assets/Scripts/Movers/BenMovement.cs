@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/**
+ * This component is for moving, jump, dash the charcther by his rigidbody
+ * also using touchDetector to achive jump ability by knowing when he is on the ground
+ * 
+ */
+
+
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(TouchDetector))]
 public class BenMovement : MonoBehaviour

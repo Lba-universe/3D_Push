@@ -560,7 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 6.7
   jumpImpulse: 5
-  DashDistance: 6
+  DashDistance: 7.57
   Jumpkey: 32
   Dashkey: 101
   slowDownAtJump: 0
@@ -948,13 +948,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3750b896b58829b47b9e26f5ceef3dad, type: 3}
---- !u!4 &1251844555 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 3750b896b58829b47b9e26f5ceef3dad,
-    type: 3}
-  m_PrefabInstance: {fileID: 1251844550}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1251844556
+--- !u!114 &1251844553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -963,9 +957,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1251844551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bbf075919ddb9843859d1cb41aa62bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b571bdbf83e603449e50749327e251f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winnerText: {fileID: 0}
+  triggeringTag: Player
+--- !u!4 &1251844555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 3750b896b58829b47b9e26f5ceef3dad,
+    type: 3}
+  m_PrefabInstance: {fileID: 1251844550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1251844557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -978,7 +980,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 24.682226, y: 26.597889, z: 0}
-  m_Center: {x: -0.7031738, y: -1.2239137, z: -11}
+  m_Center: {x: -0.7031738, y: -1.2239137, z: -3.2}
 --- !u!1001 &1340011722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1265,7 +1267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 3b031d1c8e287114d82bbe6f7debe848, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 3b031d1c8e287114d82bbe6f7debe848, type: 3}
       propertyPath: m_IsActive
@@ -1410,6 +1412,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forcemode: 1
   ForceLevel: 5
+--- !u!114 &1780409790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780409782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c369ac0acf14794cb63bd7a6c70d754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1825566059 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1692517446758730, guid: 08fd1b80cc24cc8439f45fda3c558255,
