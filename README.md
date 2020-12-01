@@ -2,7 +2,7 @@
 
 **level 2**
 
-in this level we add fire ball thah fly away the players if you tauch them.
+in this level we add fire ball thah fly away the players if you touch them.
 
 **using script:**
 
