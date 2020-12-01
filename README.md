@@ -16,6 +16,6 @@ TouchDetector.cs  [code here](https://github.com/Lba-universe/3D_Push/blob/maste
 
 ***picture:***
 
-![](
+![](/pics/1.png)
 
 ---
