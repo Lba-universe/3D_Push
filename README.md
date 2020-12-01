@@ -1,4 +1,5 @@
-# Our Game
+# Our Game 
+[Link to itch.io - enjoy the game](https://lba-universe.itch.io/baby-dragon-rumble)
 
 ---
 
