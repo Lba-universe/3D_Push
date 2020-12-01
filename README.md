@@ -6,8 +6,10 @@ in this level we add fire ball thah fly away the players if you tauch them.
 
 **using script:**
 
-BenMovement.cs 
+BenMovement.cs [code here](https://github.com/Lba-universe/3D_Push/blob/master/Assets/Scripts/Movers/BenMovement.cs)
 
-PushHim.cs  [](\Assets\Scripts\Attacks\PushHim.cs)
+PushHim.cs  [code here](https://github.com/Lba-universe/3D_Push/blob/master/Assets/Scripts/Attacks/PushForce.cs)
+
+TouchDetector.cs  [code here](https://github.com/Lba-universe/3D_Push/blob/master/Assets/Scripts/Collisions/TouchDetector.cs)
 
 ***picture:***
