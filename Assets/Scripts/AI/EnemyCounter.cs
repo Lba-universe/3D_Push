@@ -9,7 +9,6 @@ public class EnemyCounter : MonoBehaviour
     public void Awake()
     {
         count++;
-        Debug.Log(count);
     }
 
     public static void EnemyDie()
