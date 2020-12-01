@@ -31,13 +31,17 @@ they will have more force and movement, you need to find a away to push them all
 Player:
 
 BenMovement.cs [code here](https://github.com/Lba-universe/3D_Push/blob/master/Assets/Scripts/Movers/BenMovement.cs)
+
 TouchDetector.cs  [code here](https://github.com/Lba-universe/3D_Push/blob/master/Assets/Scripts/Collisions/TouchDetector.cs)
 
 Enemys:
 
 PushForce.cs [code here](https://github.com/Lba-universe/3D_Push/blob/master/Assets/Scripts/Attacks/PushForce.cs)
+
 EnemyMovement.cs[code here](https://github.com/Lba-universe/3D_Push/blob/master/Assets/Scripts/AI/EnemyMovement.cs)
+
 EnemyCounter.cs [code here](https://github.com/Lba-universe/3D_Push/blob/master/Assets/Scripts/AI/EnemyCounter.cs)
+
 
 Arena:
 
